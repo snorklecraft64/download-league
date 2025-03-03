@@ -38,5 +38,5 @@ if __name__ == '__main__':
     url = "https://www.leaguesecretary.com/bowling-centers/orleans-bowling-center/bowling-leagues/fat-purse-tuesday-ii-spring/bowler/list/136652"
     ###print(execute_script_on_url(url, "$(\"#gridStanding\").data(\'kendoGrid\').saveAsExcel()", 3, 1))
     print(execute_script_on_url(url, "$(\"#gridBowlerList\").data(\'kendoGrid\').saveAsExcel()", 3, 1))
-    print(os.listdir(os.path.dirname(os.path.realpath(__file__))))
+    print(os.path.dirname(os.path.realpath(__file__)))
     print(os.listdir(os.path.dirname(os.path.realpath(__file__)) + "/ExcelSheets"))
