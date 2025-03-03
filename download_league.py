@@ -13,7 +13,10 @@ def execute_script_on_url(
     options = webdriver.ChromeOptions()
     # Stop browser windows to pop up.
     options.add_argument('--headless')
-    prefs = {"download.default_directory" : "/"}
+    prefs = {"download.default_directory" : "/", 
+             'download.prompt_for_download': False,
+             'download.directory_upgrade': True,
+             'safebrowsing.enabled': True}
     #example: prefs = {"download.default_directory" : "C:\Tutorial\down"};
     options.add_experimental_option("prefs",prefs);
     driver = webdriver.Chrome(service=service, options=options)
