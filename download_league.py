@@ -13,7 +13,7 @@ def execute_script_on_url(
     options = webdriver.ChromeOptions()
     # Stop browser windows to pop up.
     options.add_argument('--headless')
-    prefs = {"download.default_directory" : "/", 
+    prefs = {"download.default_directory" : "/usr/bin", 
              'download.prompt_for_download': False,
              'download.directory_upgrade': True,
              'safebrowsing.enabled': True}
@@ -31,7 +31,7 @@ def execute_script_on_url(
         driver.quit()
 
 if __name__ == '__main__':
-    print("RUN: download_league.py")
+    #print("RUN: download_league.py")
     # download standings from most recent week
     url = "https://www.leaguesecretary.com/bowling-centers/orleans-bowling-center/bowling-leagues/fat-purse-tuesday-ii-spring/league/standings/136652"
     execute_script_on_url(url, "$(\"#gridStanding\").data(\'kendoGrid\').saveAsExcel()", 10, 10)
