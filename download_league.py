@@ -14,7 +14,7 @@ def execute_script_on_url(
     options = webdriver.ChromeOptions()
     # Stop browser windows to pop up.
     options.add_argument('--headless')
-    prefs = {"download.default_directory" : os.path.dirname(os.path.realpath(__file__) + "/ExcelSheets"), 
+    prefs = {"download.default_directory" : os.path.dirname(os.path.realpath(__file__)), # + "/ExcelSheets"
              'download.prompt_for_download': False,
              'download.directory_upgrade': True,
              'safebrowsing.enabled': True}
