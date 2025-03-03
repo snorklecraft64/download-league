@@ -20,12 +20,12 @@ jobs:
           sudo apt install ./google-chrome-stable_current_amd64.deb -y
       - name: Install ChromeDriver
         run: |
-          wget https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip
+          wget https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip
           unzip chromedriver_linux64.zip
           sudo mv chromedriver /usr/local/bin/
         env:
           CHROME_MAJOR_VERSION: google-chrome-stable --version | ruby -e 'puts $stdin.read[/\d+/]'
-          CHROMEDRIVER_VERSION: https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_MAJOR_VERSION}
+          CHROMEDRIVER_VERSION: curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_MAJOR_VERSION
       - name: Push Repo
         run: |
           git config user.name github-actions
