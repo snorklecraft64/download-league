@@ -19,9 +19,8 @@ def execute_script_on_url(
         driver.get(page_url)
         time.sleep(load_wait_time)
         # Execute the JS script and wait for it to finish.
-        result = driver.execute_script(js_script)
+        driver.execute_script(js_script)
         time.sleep(script_wait_time)
-        return result
     finally:
         driver.quit()
 
