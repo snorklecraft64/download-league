@@ -13,7 +13,7 @@ def execute_script_on_url(
     options = webdriver.ChromeOptions()
     # Stop browser windows to pop up.
     options.add_argument('--headless')
-    prefs = {"download.default_directory" : "/usr/bin", 
+    prefs = {"download.default_directory" : "/home/runner/work/download_league/download_league", 
              'download.prompt_for_download': False,
              'download.directory_upgrade': True,
              'safebrowsing.enabled': True}
