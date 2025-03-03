@@ -1,0 +1,18 @@
+name: "Download League"
+author: "Erik Warling"
+description: "Downloads Excel Sheets from LeagueSecretary"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+branding:
+  icon: "git-branch"
+  color: "red"
+inputs:
+  email:
+    description: The commiter's email address
+    required: true
+    default: ${{ github.actor }}@localhost
+  name:
+    description: The commiter's name
+    required: true
+    default: ${{ github.actor }}
