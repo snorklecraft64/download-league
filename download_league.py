@@ -1,4 +1,5 @@
 import time
+import os
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -31,7 +32,7 @@ def execute_script_on_url(
         driver.quit()
 
 if __name__ == '__main__':
-    #print("RUN: download_league.py")
+    print(os.path.dirname(os.path.realpath(__file__)))
     # download standings from most recent week
     url = "https://www.leaguesecretary.com/bowling-centers/orleans-bowling-center/bowling-leagues/fat-purse-tuesday-ii-spring/league/standings/136652"
     execute_script_on_url(url, "$(\"#gridStanding\").data(\'kendoGrid\').saveAsExcel()", 10, 10)
