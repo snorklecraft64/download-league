@@ -1,4 +1,4 @@
-name: Generate Feed
+name: Download Excel Sheets
 on: [push]
 jobs:
   build:
