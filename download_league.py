@@ -30,4 +30,4 @@ def execute_script_on_url(
 if __name__ == '__main__':
     # download standings from most recent week
     url = "https://www.leaguesecretary.com/bowling-centers/orleans-bowling-center/bowling-leagues/fat-purse-tuesday-ii-spring/league/standings/136652"
-    execute_script_on_url(url, "$(\"#gridStanding\").data(\'kendoGrid\').saveAsExcel()", 1, 1)
+    execute_script_on_url(url, "$(\"#gridStanding\").data(\'kendoGrid\').saveAsExcel()", 10, 10)
