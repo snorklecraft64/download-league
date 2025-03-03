@@ -13,7 +13,7 @@ def execute_script_on_url(
     options = webdriver.ChromeOptions()
     # Stop browser windows to pop up.
     options.add_argument('--headless')
-    prefs = {"download.default_directory" : "Excel Sheets/"}
+    prefs = {"download.default_directory" : "./"}
     #example: prefs = {"download.default_directory" : "C:\Tutorial\down"};
     options.add_experimental_option("prefs",prefs);
     driver = webdriver.Chrome(service=service, options=options)
