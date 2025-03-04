@@ -39,4 +39,5 @@ if __name__ == '__main__':
     ###print(execute_script_on_url(url, "$(\"#gridStanding\").data(\'kendoGrid\').saveAsExcel()", 3, 1))
     print(execute_script_on_url(url, "$(\"#gridBowlerList\").data(\'kendoGrid\').saveAsExcel()", 3, 1))
     print(os.path.dirname(os.path.realpath(__file__)))
+    print(os.getcwd())
     print(os.listdir(os.path.dirname(os.path.realpath(__file__)) + "/ExcelSheets"))
