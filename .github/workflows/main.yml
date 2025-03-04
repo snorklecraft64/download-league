@@ -10,14 +10,17 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-      - name: Install Dependenceies
+      - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
           pip install selenium
           pip install webdriver_manager
-          mkdir ExcelSheets -p
       - name: Run Excel Downloader
-        run: | # run from inside ExcelSheets so we can use the current working directory as the download directory
+        # delete from ExcelSheets first
+        # run from inside ExcelSheets so we can use the current working directory as the download directory
+        run: | 
+          rm -r ExcelSheets
+          mkdir ExcelSheets
           cd ExcelSheets
           python ../download_league.py
       - name: Push Repo
