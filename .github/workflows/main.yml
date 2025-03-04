@@ -16,20 +16,8 @@ jobs:
           pip install selenium
           pip install webdriver_manager
           mkdir ExcelSheets -p
-      #- name: Install Chrome
-      #  run: |
-      #    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-      #    sudo apt install ./google-chrome-stable_current_amd64.deb -y
-      #- name: Install ChromeDriver
-      #  run: |
-      #    wget https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip
-      #    unzip chromedriver_linux64.zip
-      #    sudo mv chromedriver /usr/local/bin/
-      #  env:
-      #    CHROME_MAJOR_VERSION: google-chrome-stable --version | ruby -e 'puts $stdin.read[/\d+/]'
-      #    CHROMEDRIVER_VERSION: https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_MAJOR_VERSION
       - name: Run Excel Downloader
-        run: |
+        run: | # run from inside ExcelSheets so we can use the current working directory as the download directory
           cd ExcelSheets
           python ../download_league.py
       - name: Push Repo
