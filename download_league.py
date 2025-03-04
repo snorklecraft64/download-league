@@ -34,7 +34,8 @@ def execute_script_on_url(
 
 if __name__ == '__main__':
     # download standings from most recent week
-    ###url = "https://www.leaguesecretary.com/bowling-centers/orleans-bowling-center/bowling-leagues/fat-purse-tuesday-ii-spring/league/standings/136652"
+    url = "https://www.leaguesecretary.com/bowling-centers/orleans-bowling-center/bowling-leagues/fat-purse-tuesday-ii-spring/league/standings/136652"
+    execute_script_on_url(url, "$(\"#gridStanding\").data(\'kendoGrid\').saveAsExcel()", 3, 1)
+    # download bowler list from most recent week
     url = "https://www.leaguesecretary.com/bowling-centers/orleans-bowling-center/bowling-leagues/fat-purse-tuesday-ii-spring/bowler/list/136652"
-    ###print(execute_script_on_url(url, "$(\"#gridStanding\").data(\'kendoGrid\').saveAsExcel()", 3, 1))
-    print(execute_script_on_url(url, "$(\"#gridBowlerList\").data(\'kendoGrid\').saveAsExcel()", 3, 1))
+    execute_script_on_url(url, "$(\"#gridBowlerList\").data(\'kendoGrid\').saveAsExcel()", 3, 1)
